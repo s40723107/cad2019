@@ -34,7 +34,7 @@
 <h3>編譯步驟</h3>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">先將Y：\ portablegit \ bin \ sh.exe改名為sh_rename_for_solvespace.exe</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git版本查驗git版本</span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git 2.13版本以上，可以使用以下git clone  </span></span><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">--recurse-submodules獲取所有子模組資料</span></span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git 2.13版本以上，可以使用以下git clone  </span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">--recurse-submodules獲取所有子模組資料</span></span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git解決空間</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">編輯Y：\ tmp \ solvespace \ extlib \ angle \ CMakeLists.txt註釋掉第713和714行</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#list（APPEND ANGLE_DEFINITIONS </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">＃“-DANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES = {\” d3dcompiler_47.dll \“，\” d3dcompiler_46.dll \“，\” d3dcompiler_43.dll \“}”）</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">endif（）</span></span></p>
@@ -47,8 +47,8 @@
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cmake .. -G“ MinGW Makefiles” -DCMAKE_BUILD_TYPE =發布</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mingw32-make</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">將libpng.dll.a重命名為libpng_static.a並複製到Y：\ msys64 \ mingw64 \ lib</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">接著回到solvespace原始代碼目錄，建立構建目錄後進入建立目錄，執行：</span></span></p>
-<p><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cmake .. -G“ MinGW Makefiles” -DCMAKE_BUILD_TYPE =發布</span></span></span><br/><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mingw32-make</span></span></span></p>
-<p><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DY4sFTSi0go" width="560"></iframe></span></span></span></p>
+<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cmake .. -G“ MinGW Makefiles” -DCMAKE_BUILD_TYPE =發布</span></span></span><br/><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mingw32-make</span></span></span></p>
+<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DY4sFTSi0go" width="560"></iframe></span></span></span></p>
 <h2>week5</h2>
 <h3>Solvespace 操作</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/4kCtnkvPaog" width="560"></iframe></p>
@@ -60,9 +60,26 @@
 <h3>Solvespace 繪圖驗證</h3>
 <p><span>從</span><a href="http://mde.tw/cad2019/content/CAD2CAE.html">零件網頁</a>自選要畫的圖<span> 可採 Solvespace 完成繪圖的零件</span></p>
 <p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/bJAsd3-_YC4" width="560"></iframe></span></p>
-<p><span mce-data-marked="1"> </span></p>
 <h2>week8</h2>
-<h2>week9</h2>
+<p><span>Leo 設定網址路徑和名稱</span></p>
+<p><span>1.</span></p>
+<p><span>打開D槽中自己倉儲的config裡pelican.leo的檔案(在Leo 裡開啟)，另外再打開Y槽tmp裡的cp2019/config/pelican.leo裡</span></p>
+<p><span>在Leo裡將cp2019的編輯tamplate/@path theme/...底下@edit base的程式全部複製並貼上在相同位置的自己的倉儲pelican.leo裡，之後做儲存</span><span> </span></p>
+<p><span>2.</span></p>
+<p><span>Leo中共用裡@edit  pelicanconf.py 修改</span></p>
+<p><span>AUTHOR</span>=自己學號</p>
+<p><span>SITENAME</span>=cad2019學號</p>
+<p><span>3.</span></p>
+<p><span>Leo中遠端裡@edit publishconf.py修改</span></p>
+<p><span>1.<span>SITEURL</span>=https://倉儲帳號.github.io/cad2019/blog</span></p>
+<p><span>2.<span>DISQUS_SITENAME</span>=Disqus名稱</span></p>
+<p><span>註:指令ctrl+I=為一個節點，意思是增加一個檔案</span></p>
+<h2>week10 . 11</h2>
+<p><span>Fork分組倉儲  : <a href="https://github.com/s40723125/cad2019ag5">https://github.com/s40723125/cad2019ag5</a></span></p>
+<p><span><img alt="" height="940" src="/images/FORK2.PNG" width="1920"/></span></p>
+<h2>week12</h2>
+<h2>week13</h2>
+<p><span></span></p>
 <h1>期中報告</h1>
 <p>期中報告影片 : </p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/vMxCZa78SVw" width="560"></iframe></p>
