@@ -143,7 +143,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Develop.html'>Develop</a><li class='has-children'><a href='每週練習內容.html'>每週練習內容</a><ul class='dropdown'><li class='has-children'><a href='week2.html'>week2</a><ul class='dropdown'><li><a href='CMSIMDE.html'>CMSIMDE</a></li></ul><li class='has-children'><a href='week3.html'>week3</a><ul class='dropdown'><li><a href='編譯步驟.html'>編譯步驟</a></li></ul><li class='has-children'><a href='week5.html'>week5</a><ul class='dropdown'><li><a href='Solvespace 操作.html'>Solvespace 操作</a></li></ul><li class='has-children'><a href='week6.html'>week6</a><ul class='dropdown'><li><a href='V-rep模型控制汽車移動.html'>V-rep模型控制汽車移動</a></li></ul><li class='has-children'><a href='week7.html'>week7</a><ul class='dropdown'><li><a href='Solvespace 繪圖驗證.html'>Solvespace 繪圖驗證</a></li></li></ul></ul><li><a href='期中報告.html'>期中報告</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Develop.html'>Develop</a><li class='has-children'><a href='每週練習內容.html'>每週練習內容</a><ul class='dropdown'><li class='has-children'><a href='week2.html'>week2</a><ul class='dropdown'><li><a href='CMSIMDE.html'>CMSIMDE</a></li></ul><li class='has-children'><a href='week3.html'>week3</a><ul class='dropdown'><li><a href='編譯步驟.html'>編譯步驟</a></li></ul><li class='has-children'><a href='week5.html'>week5</a><ul class='dropdown'><li><a href='Solvespace 操作.html'>Solvespace 操作</a></li></ul><li class='has-children'><a href='week6.html'>week6</a><ul class='dropdown'><li><a href='V-rep模型控制汽車移動.html'>V-rep模型控制汽車移動</a></li></ul><li class='has-children'><a href='week7.html'>week7</a><ul class='dropdown'><li><a href='Solvespace 繪圖驗證.html'>Solvespace 繪圖驗證</a></li></ul><li><a href='week8.html'>week8</a><li><a href='week10 . 11.html'>week10 . 11</a><li><a href='week12.html'>week12</a><li><a href='week13.html'>week13</a></li></ul><li><a href='期中報告.html'>期中報告</a></li>
                       </ul>
                 </nav>
               </div>
@@ -157,7 +157,7 @@ img.add_border {
     <div id="tipue_search_content">week3 << <a href='week3.html'>Previous</a> <a href='week5.html'>Next</a> >> week5<br /><h1>編譯步驟</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">先將Y：\ portablegit \ bin \ sh.exe改名為sh_rename_for_solvespace.exe</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git版本查驗git版本</span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git 2.13版本以上，可以使用以下git clone  </span></span><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">--recurse-submodules獲取所有子模組資料</span></span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git 2.13版本以上，可以使用以下git clone  </span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">--recurse-submodules獲取所有子模組資料</span></span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git解決空間</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">編輯Y：\ tmp \ solvespace \ extlib \ angle \ CMakeLists.txt註釋掉第713和714行</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#list（APPEND ANGLE_DEFINITIONS </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">＃“-DANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES = {\” d3dcompiler_47.dll \“，\” d3dcompiler_46.dll \“，\” d3dcompiler_43.dll \“}”）</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">endif（）</span></span></p>
@@ -170,8 +170,8 @@ img.add_border {
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cmake .. -G“ MinGW Makefiles” -DCMAKE_BUILD_TYPE =發布</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mingw32-make</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">將libpng.dll.a重命名為libpng_static.a並複製到Y：\ msys64 \ mingw64 \ lib</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">接著回到solvespace原始代碼目錄，建立構建目錄後進入建立目錄，執行：</span></span></p>
-<p><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cmake .. -G“ MinGW Makefiles” -DCMAKE_BUILD_TYPE =發布</span></span></span><br/><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mingw32-make</span></span></span></p>
-<p><span mce-data-marked="1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DY4sFTSi0go" width="560"></iframe></span></span></span></p>
+<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cmake .. -G“ MinGW Makefiles” -DCMAKE_BUILD_TYPE =發布</span></span></span><br/><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mingw32-make</span></span></span></p>
+<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DY4sFTSi0go" width="560"></iframe></span></span></span></p>
 <br />week3 << <a href='week3.html'>Previous</a> <a href='week5.html'>Next</a> >> week5</div>
         
     <!-- footer -->
