@@ -122,7 +122,9 @@
 <p><span style="color: #993300;">We decide to use the mesh decimation function first,</span></p>
 <p>我們決定首先使用網格抽取功能</p>
 <p> <span style="color: #993300;">and run the function twice in order to divide the number of triangles by a total of 50. </span></p>
-<p>並運行兩次函數以將三角形的總數除以<span>50</span>完成後，我們提取簡化形狀的內部並將其丟棄</p>
+<p>並運行兩次函數以將三角形的總數除以<span>50</span></p>
+<p><span style="color: #993300;">Once that is done, we extract the inside of the simplified shape and discard it. </span></p>
+<p>完成後，我們提取簡化形狀的內部並將其丟棄</p>
 <p> <span style="color: #993300;">We end-up with a mesh containing a total of 2'660 triangles (the original imported mesh contained more than 136'000 triangles!). </span></p>
 <p>我們最終得到一個包含總共<span>2'660</span>個三角形的網格（原始導入的網格包含了超過<span>136'000</span>個三角形！）。</p>
 <p> <span style="color: #993300;">The number of triangles/vertices a shape contains can be seen in the shape geometry dialog.</span></p>
@@ -162,8 +164,7 @@
 <p> <span style="color: #993300;">Now we can group the shapes that are part of the same link with [Menu bar --&gt; Edit --&gt; Grouping/merging -&gt; Group selected shapes]. We end up with 7 shapes: the base of the robot (or base of the robot's hierarchy tree), and 6 mobile links. It is also important to correctly name your objects: you we do this with a double-click on the object name in the <a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#SceneHierarchy" style="color: #993300;">scene hierarchy</a>. The base should always be the robot or model name, and the other objects should always contain the base object name, like: <em>robot</em> (base), <em>robot_link1</em>, <em>robot_proximitySensor</em>, etc. By defaut, shapes will be assigned to visibility layer 1, but can be changed in the <a href="http://www.coppeliarobotics.com/helpFiles/en/commonPropertiesDialog.htm" style="color: #993300;">object common properties</a>. By default, only <a href="http://www.coppeliarobotics.com/helpFiles/en/layerSelectionDialog.htm" style="color: #993300;">visibility layers 1-8 are activated for the scene</a>. We now have following (the model <em>ResizableFloor_5_25</em> was temporarily made invisible in the <a href="http://www.coppeliarobotics.com/helpFiles/en/modelDialog.htm" style="color: #993300;">model properties dialog</a>)</span></p>
 <p> 現在，我們可以使用[菜單欄-&gt;編輯-&gt;分組/合併-&gt;分組所選形狀]對屬於同一鏈接的形狀進行分組。 我們最終得到7個形狀：機器人的基礎（或機器人的層次結構樹的基礎）和6個移動鏈接。 正確命名對像也很重要：您可以通過雙擊場景層次結構中的對象名稱來做到這一點。 基礎應始終是機械手或模型名稱，其他對象應始終包含基礎對象名稱，例如：robot（基礎），robot_link1，robot_proximitySensor等。通過默認，形狀將分配給可見性層1，但可以 在對象通用屬性中進行更改。 默認情況下，僅激活場景的可見性層1-8。 現在，我們有了以下內容（模型ResizableFloor_5_25模型在模型屬性對話框中暫時不可見）</p>
 <p><span style="color: #993300;">When a shape is created or modified, CoppeliaSim will automatically set its reference frame position and orientation. A shape's reference frame will always be positioned at the shape's geometric center. The frame orientation will be selected so that the shape's bounding box remains as small as possible. This does not always look nice, but we can always reorient a shape's reference frame at any time. We now reorient the reference frames of all our created shapes with [Menu bar --&gt; Edit --&gt; Reorient bounding box --&gt; with reference frame of world]. You have more options to reorient a reference frame in the <a href="http://www.coppeliarobotics.com/helpFiles/en/geometryDialog.htm" style="color: #993300;">shape geometry dialog</a>.</span></p>
-<p>創建或修改形狀時，CoppeliaSim將自動設置其參考框架的位置和方向。 形狀的參考框架將始終位於形狀的幾何中心。 將選擇框架方向，以便形狀的邊界框保持盡可能小。 這並不總是看起來不錯，但是我們隨時可以隨時調整形狀的參考框架的方向。 現在，我們可以使用[菜單欄-&gt;編輯-&gt;重定向邊界框-&gt;使用世界參考框架]重新調整所有已創建形狀的參考框架。 您有更多選項可以在形狀幾何對話框中重新定向參考框架。</p>
-<h3>week17影片</h3>
+<p>創建或修改形狀時，CoppeliaSim將自動設置其參考框架的位置和方向。 形狀的參考框架將始終位於形狀的幾何中心。 將選擇框架方向，以便形狀的邊界框保持盡可能小。 這並不總是看起來不錯，但是我們隨時可以隨時調整形狀的參考框架的方向。 現在，我們可以使用[菜單欄-&gt;編輯-&gt;重定向邊界框-&gt;使用世界參考框架]重新調整所有已創建形狀的參考框架。 您有更多選項可以在形狀幾何對話框中重新定向參考框架。</p><h3>week17影片</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/I325o8VQ-9k" width="560"></iframe></p>
 <h1>期中報告</h1>
 <p>期中報告影片 : </p>
