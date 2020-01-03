@@ -113,9 +113,10 @@
 <p><span style="color: #ff0000;">越野車零組件設計繪圖查驗 :</span></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/6xalnwEA8YQ" width="560"></iframe><span></span></p>
 <p><span style="color: #ff0000;">心得 : <span style="color: #ff0000;"></span> </span>今天的小考題目並不簡單，時間上的分配要調配好，並且要自己去設計一些相關尺寸，希望下次能夠在時間內完成影片拍攝，這次的查驗明顯發現自己的繪畫速度太慢，需要更加努力。</p>
-<h2>week17 原文書翻譯</h2>
-<p><span style="color: #ff0000;"><strong>Building the visible shapes</strong></span></p>
-<p><span style="color: #ff0000;"><strong>建立可見的形狀</strong></span></p>
+<h2>week17</h2>
+<h3>原文書翻譯</h3>
+<p><span style="color: #000080;"><strong>Building the visible shapes</strong></span></p>
+<p><span style="color: #000080;"><strong>建立可見的形狀</strong></span></p>
 <p><span style="color: #993300;">Notice how the convex hull doesn't help us at this stage.</span></p>
 <p>請注意，凸包在現階段如何對我們沒有幫助，</p>
 <p><span style="color: #993300;">We decide to use the mesh decimation function first,</span></p>
@@ -161,6 +162,7 @@
 <p> <span style="color: #993300;">Now we can group the shapes that are part of the same link with [Menu bar --&gt; Edit --&gt; Grouping/merging -&gt; Group selected shapes]. We end up with 7 shapes: the base of the robot (or base of the robot's hierarchy tree), and 6 mobile links. It is also important to correctly name your objects: you we do this with a double-click on the object name in the <a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#SceneHierarchy" style="color: #993300;">scene hierarchy</a>. The base should always be the robot or model name, and the other objects should always contain the base object name, like: <em>robot</em> (base), <em>robot_link1</em>, <em>robot_proximitySensor</em>, etc. By defaut, shapes will be assigned to visibility layer 1, but can be changed in the <a href="http://www.coppeliarobotics.com/helpFiles/en/commonPropertiesDialog.htm" style="color: #993300;">object common properties</a>. By default, only <a href="http://www.coppeliarobotics.com/helpFiles/en/layerSelectionDialog.htm" style="color: #993300;">visibility layers 1-8 are activated for the scene</a>. We now have following (the model <em>ResizableFloor_5_25</em> was temporarily made invisible in the <a href="http://www.coppeliarobotics.com/helpFiles/en/modelDialog.htm" style="color: #993300;">model properties dialog</a>)</span></p>
 <p> 現在，我們可以使用[菜單欄-&gt;編輯-&gt;分組/合併-&gt;分組所選形狀]對屬於同一鏈接的形狀進行分組。 我們最終得到7個形狀：機器人的基礎（或機器人的層次結構樹的基礎）和6個移動鏈接。 正確命名對像也很重要：您可以通過雙擊場景層次結構中的對象名稱來做到這一點。 基礎應始終是機械手或模型名稱，其他對象應始終包含基礎對象名稱，例如：robot（基礎），robot_link1，robot_proximitySensor等。通過默認，形狀將分配給可見性層1，但可以 在對象通用屬性中進行更改。 默認情況下，僅激活場景的可見性層1-8。 現在，我們有了以下內容（模型ResizableFloor_5_25模型在模型屬性對話框中暫時不可見）</p>
 <p><span style="color: #993300;">When a shape is created or modified, CoppeliaSim will automatically set its reference frame position and orientation. A shape's reference frame will always be positioned at the shape's geometric center. The frame orientation will be selected so that the shape's bounding box remains as small as possible. This does not always look nice, but we can always reorient a shape's reference frame at any time. We now reorient the reference frames of all our created shapes with [Menu bar --&gt; Edit --&gt; Reorient bounding box --&gt; with reference frame of world]. You have more options to reorient a reference frame in the <a href="http://www.coppeliarobotics.com/helpFiles/en/geometryDialog.htm" style="color: #993300;">shape geometry dialog</a>.</span></p>
-<p>創建或修改形狀時，CoppeliaSim將自動設置其參考框架的位置和方向。 形狀的參考框架將始終位於形狀的幾何中心。 將選擇框架方向，以便形狀的邊界框保持盡可能小。 這並不總是看起來不錯，但是我們隨時可以隨時調整形狀的參考框架的方向。 現在，我們可以使用[菜單欄-&gt;編輯-&gt;重定向邊界框-&gt;使用世界參考框架]重新調整所有已創建形狀的參考框架。 您有更多選項可以在形狀幾何對話框中重新定向參考框架。</p><h1>期中報告</h1>
+<p>創建或修改形狀時，CoppeliaSim將自動設置其參考框架的位置和方向。 形狀的參考框架將始終位於形狀的幾何中心。 將選擇框架方向，以便形狀的邊界框保持盡可能小。 這並不總是看起來不錯，但是我們隨時可以隨時調整形狀的參考框架的方向。 現在，我們可以使用[菜單欄-&gt;編輯-&gt;重定向邊界框-&gt;使用世界參考框架]重新調整所有已創建形狀的參考框架。 您有更多選項可以在形狀幾何對話框中重新定向參考框架。</p>
+<h1>期中報告</h1>
 <p>期中報告影片 : </p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/vMxCZa78SVw" width="560"></iframe></p>
