@@ -114,7 +114,81 @@
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/6xalnwEA8YQ" width="560"></iframe><span></span></p>
 <p><span style="color: #ff0000;">心得 : <span style="color: #ff0000;"></span> </span>今天的小考題目並不簡單，時間上的分配要調配好，並且要自己去設計一些相關尺寸，希望下次能夠在時間內完成影片拍攝，這次的查驗明顯發現自己的繪畫速度太慢，需要更加努力。</p>
 <h2>week17</h2>
-<h2>week18</h2>
-<h1>期中報告</h1>
+<p>Building the visible shapes</p>
+<p>建立可見的形狀</p>
+<p></p>
+<p>Notice how the convex hull doesn't help us at this stage.</p>
+<p>請注意，凸包在現階段如何對我們沒有幫助，</p>
+<p>We decide to use the mesh decimation function first,</p>
+<p>我們決定首先使用網格抽取功能</p>
+<p> </p>
+<p>and run the function twice in order to divide the number of triangles by a total of 50. </p>
+<p>並運行兩次函數以將三角形的總數除以<span>50</span>完成後，我們提取簡化形狀的內部並將其丟棄</p>
+<p> </p>
+<p>We end-up with a mesh containing a total of 2'660 triangles (the original imported mesh contained more than 136'000 triangles!). </p>
+<p>我們最終得到一個包含總共<span>2'660</span>個三角形的網格（原始導入的網格包含了超過<span>136'000</span>個三角形！）。</p>
+<p> </p>
+<p>The number of triangles/vertices a shape contains can be seen in the shape geometry dialog.</p>
+<p>形狀包含的三角形<span>/</span>頂點的數量可以在形狀幾何對話框中看到。</p>
+<p> </p>
+<p>2'660 triangles are extremely few triangles for a whole robot model, and the visual appearance might suffer a little bit from it.</p>
+<p>對於整個機器人模型，2'660三角形是極少的三角形，因此視覺外觀可能會因此受到影響。</p>
+<p> </p>
+<p>At this stage we can start to divide the robot into separate links (remember, we currently have only a single shape for the whole robot). You can do this in two different ways:</p>
+<p>在這一階段，我們可以開始將機器人劃分為單獨的鏈接（請記住，我們目前整個機器人只有一個形狀）。 您可以通過兩種不同的方式執行此操作：</p>
+<p> </p>
+<p><strong>Automatic mesh division:</strong> this function, which was already described in previous section</p>
+<p>自動網格劃分：此功能已在上一節中進行了描述</p>
+<p> </p>
+<p>will inspect the shape and generate a new shape for all elements that are not linked together via a common edge. </p>
+<p> </p>
+<p>將檢查形狀並為未通過公共邊鏈接在一起的所有元素生成新形狀。</p>
+<p> </p>
+<p> This does not always work, but is always worth a try. The function can be accessed with [Menu bar --&gt; Edit --&gt; Grouping/merging --&gt; Divide selected shapes].</p>
+<p> </p>
+<p>這並不總是有效，但總是值得嘗試的。 可以通過[菜單欄-&gt;編輯-&gt;分組/合併-&gt;分割所選形狀]使用該功能。</p>
+<p> </p>
+<p><strong>Manual mesh division:</strong> via the the triangle edit mode, you can manually select the triangles than logically belong together, then click <strong>Extract shape</strong>. </p>
+<p>手動網格劃分：通過三角形編輯模式，您可以手動選擇邏輯上不屬於三角形的三角形，然後單擊“提取形狀”。 他將會在場景中產生新的形狀。完成該操作後，刪除選定的三角形。</p>
+<p> </p>
+<p>Now, we could further refine/simplify individual shapes ,Sometimes also, a shape might look better if its convex hull is used instead.</p>
+<p>現在，我們可以進一步細化/簡化單個形狀，有時，如果改用凸殼，形狀可能會看起來更好。</p>
+<p> </p>
+<p>Othertimes, you will have to use several of above's described techniques iteratively, in order to obtain the desired result. Take for instance following mesh:</p>
+<p>有時，您將不得不反複使用上述幾種技術，為了獲得理想的結果，以以下網格為例：</p>
+<p> </p>
+<p>The problem with above's shape is that we cannot simplify it nicely, because of the holes it contains.</p>
+<p>上面形狀的問題是，由於其中包含孔，我們無法很好地簡化它。</p>
+<p> </p>
+<p>So we have to go the more complicated way via the <span><a href="http://www.coppeliarobotics.com/helpFiles/en/shapeEditModes.htm">shape edit mode</a></span>, where we can extract individual elements that logically belong to the same convex sub-entity.</p>
+<p> </p>
+<p>因此，我們必須通過形狀編輯模式進行更複雜的處理，在該模式下，我們可以提取邏輯上屬於相同凸子實體的單個元素。</p>
+<p> </p>
+<p>This process can take several iterations: we first extract 3 approximate convex elements.</p>
+<p>此過程可能需要進行多次疊帶代法：我們首先提取3個近似凸元素。</p>
+<p> </p>
+<p>For now, we ignore the triangles that are part of the two holes. While editing a shape in the shape edit mode, it can be convenient to switch the visibility layers, in order to see what is covered by other scene items.</p>
+<p>現在，我們忽略了兩個孔中的三角形。 在形狀編輯模式下編輯形狀時，可以方便地切換可見性圖層，以查看其他場景項所覆蓋的內容。</p>
+<p> </p>
+<p>We end up with a toal of three shapes, but two of them will need further improvement. Now we can erase the triangles that are part of the holes. Finally, we extract the convex hull individually for the 3 shapes, then merge them back together with [Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; merge selected shapes]</p>
+<p>我們最終得到三個形狀的總和，但是其中兩個將需要進一步改進。 現在我們可以擦除作為兩個孔中的三角形。 最後，我們分別提取3種形狀的凸包，然後將其與[菜單欄-&gt;編輯-&gt;分組/合併-&gt;合併所選形狀]合併在一起</p>
+<p> </p>
+<p>In CoppeliaSim, we can enable/disable edge display for each shape. We can also specify an angle that will be taken into account for the edge display.</p>
+<p>在CoppeliaSim中，我們可以啟用/禁用每種形狀的邊緣顯示。 我們還可以指定邊緣顯示時要考慮的角度。</p>
+<p> </p>
+<p>A similar parameter is the <strong>shading angle</strong>, that dictates how facetted the shape will display. Those parameters, and a few others such as the shape <strong>color</strong>, can be adjusted in the <span><a href="http://www.coppeliarobotics.com/helpFiles/en/simulationPropertiesDialog.htm">shape properties</a></span>. Remember that <span><a href="http://www.coppeliarobotics.com/helpFiles/en/shapes.htm">shapes come in various flavours</a></span>. In this tutorial we have only dealt with simple shapes up to now: a simple shape has a single set of visual attributes (i.e. one color, one shading angle, etc.). If you merge two shapes, then the result will be a simple shape. You can also group shapes, in which case, each shape will retain its visual attributes.</p>
+<p>相似的參數是陰影角，它指示形狀將在多方面顯示。 這些參數以及其他一些參數（例如形狀顏色）可以在形狀屬性中進行調整。 請記住，形狀有多種型態。 到目前為止，在本教程中，我們僅處理簡單的形狀：簡單的形狀具有一組視覺屬性（即一種顏色，一個陰影角度等）。 如果合併兩個形狀，則結果將是一個簡單的形狀。 您還可以對形狀進行分組，在這種情況下，每個形狀將保留其視覺屬性。</p>
+<p> </p>
+<p>In next step, we can merge elements that logically belong together (if they are part of the same rigid element, and if they have the same visual attributes). Then we change the visual attributes of the various elements. The easiest ist to adjust a few shapes that have different colors and visual attributes, and if we name the color with a specific string, we can later easily programmatically change that color, also if the shape is part of a compound shape. Then, we select all the shapes that have the same visual attributes, then control-select the shape that was already adjusted, then click <strong>Apply to selection</strong>, once for the <strong>Colors</strong>, once for the <strong>other properties</strong>, in the <a href="http://www.coppeliarobotics.com/helpFiles/en/shapeProperties.htm">shape properties</a>: this transfers all visual attributes to the selected shapes (including the color name if you provided one). We end up with 17 individual shapes</p>
+<p> </p>
+<p>下一步中，我們可以合併邏輯上屬於一起的元素（如果它們屬於同一剛性元素，並且具有相同的視覺屬性）。 然後，我們更改各種元素的視覺屬性。 調整具有不同顏色和視覺屬性的幾種形狀的最簡便方法，如果我們使用特定的字符串來命名顏色，則以後可以輕鬆地以編程方式更改該顏色，即使該形狀是複合形狀的一部分。 然後，我們選擇所有具有相同視覺屬性的形狀，控制選擇已調整的形狀，單擊“應用於選擇”，一次是“顏色”，一次是其他屬性，在形狀屬性中：這將轉移所有 所選形狀的視覺屬性（如果提供的話，還包括顏色名稱）。 我們最終得到17個單獨的形狀：</p>
+<p> </p>
+<p>Now we can group the shapes that are part of the same link with [Menu bar --&gt; Edit --&gt; Grouping/merging -&gt; Group selected shapes]. We end up with 7 shapes: the base of the robot (or base of the robot's hierarchy tree), and 6 mobile links. It is also important to correctly name your objects: you we do this with a double-click on the object name in the <span><a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#SceneHierarchy">scene hierarchy</a></span>. The base should always be the robot or model name, and the other objects should always contain the base object name, like: <em>robot</em> (base), <em>robot_link1</em>, <em>robot_proximitySensor</em>, etc. By defaut, shapes will be assigned to visibility layer 1, but can be changed in the <span><a href="http://www.coppeliarobotics.com/helpFiles/en/commonPropertiesDialog.htm">object common properties</a></span>. By default, only <span><a href="http://www.coppeliarobotics.com/helpFiles/en/layerSelectionDialog.htm">visibility layers 1-8 are activated for the scene</a></span>. We now have following (the model <em>ResizableFloor_5_25</em> was temporarily made invisible in the <span><a href="http://www.coppeliarobotics.com/helpFiles/en/modelDialog.htm">model properties dialog</a></span>)</p>
+<p> </p>
+<p>現在，我們可以使用[菜單欄-&gt;編輯-&gt;分組/合併-&gt;分組所選形狀]對屬於同一鏈接的形狀進行分組。 我們最終得到7個形狀：機器人的基礎（或機器人的層次結構樹的基礎）和6個移動鏈接。 正確命名對像也很重要：您可以通過雙擊場景層次結構中的對象名稱來做到這一點。 基礎應始終是機械手或模型名稱，其他對象應始終包含基礎對象名稱，例如：robot（基礎），robot_link1，robot_proximitySensor等。通過默認，形狀將分配給可見性層1，但可以 在對象通用屬性中進行更改。 默認情況下，僅激活場景的可見性層1-8。 現在，我們有了以下內容（模型ResizableFloor_5_25模型在模型屬性對話框中暫時不可見）</p>
+<p> </p>
+<p>When a shape is created or modified, CoppeliaSim will automatically set its reference frame position and orientation. A shape's reference frame will always be positioned at the shape's geometric center. The frame orientation will be selected so that the shape's bounding box remains as small as possible. This does not always look nice, but we can always reorient a shape's reference frame at any time. We now reorient the reference frames of all our created shapes with [Menu bar --&gt; Edit --&gt; Reorient bounding box --&gt; with reference frame of world]. You have more options to reorient a reference frame in the <span><a href="http://www.coppeliarobotics.com/helpFiles/en/geometryDialog.htm">shape geometry dialog</a></span>.</p>
+<p> </p>
+<p>創建或修改形狀時，CoppeliaSim將自動設置其參考框架的位置和方向。 形狀的參考框架將始終位於形狀的幾何中心。 將選擇框架方向，以便形狀的邊界框保持盡可能小。 這並不總是看起來不錯，但是我們隨時可以隨時調整形狀的參考框架的方向。 現在，我們可以使用[菜單欄-&gt;編輯-&gt;重定向邊界框-&gt;使用世界參考框架]重新調整所有已創建形狀的參考框架。 您有更多選項可以在形狀幾何對話框中重新定向參考框架。</p><h1>期中報告</h1>
 <p>期中報告影片 : </p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/vMxCZa78SVw" width="560"></iframe></p>
